@@ -1,0 +1,19 @@
+﻿<userInterface:BaseWindow x:Class="Codefusion.Jaskier.Client.VS2015.UserInterface.SettingsWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:userInterface="clr-namespace:Codefusion.Jaskier.Client.VS2015.UserInterface"
+             mc:Ignorable="d"            
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Window.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
+</userInterface:BaseWindow>
+
+
+
+
+
+
+

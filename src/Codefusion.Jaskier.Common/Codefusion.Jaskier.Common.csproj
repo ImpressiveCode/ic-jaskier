@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\lib\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\..\lib\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF350AB3-6353-4C50-9B3E-D52CDD57D2DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Codefusion.Jaskier.Common</RootNamespace>
+    <AssemblyName>Codefusion.Jaskier.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CCMEngine">
+      <HintPath>..\..\lib\ccm-master\CCMEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LibGit2Sharp, Version=0.23.1.0, Culture=neutral, PublicKeyToken=7cbde695407f0333, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\LibGit2Sharp.0.23.1\lib\net40\LibGit2Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Oracle.ManagedDataAccess.12.1.24160719\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=3.2.7.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\SimpleInjector.4.2.1\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Data\PredictionResponseItem.cs" />
+    <Compile Include="Data\PredictionRequestFile.cs" />
+    <Compile Include="Data\PredictionRequest.cs" />
+    <Compile Include="Data\PredictionResponse.cs" />
+    <Compile Include="Data\PutTelemetryRequest.cs" />
+    <Compile Include="Data\TelemetryAction.cs" />
+    <Compile Include="Helpers\CommiterNameHelper.cs" />
+    <Compile Include="Helpers\CyclomaticComplexityHelper.cs" />
+    <Compile Include="Helpers\CyclomaticComplexityMetric.cs" />
+    <Compile Include="Helpers\EnumerableHelper.cs" />
+    <Compile Include="Helpers\ExperimentDayCalculator.cs" />
+    <Compile Include="Helpers\ImposedBlockGenerator.cs" />
+    <Compile Include="Helpers\RandomBlockGenerator.cs" />
+    <Compile Include="Migrations\201710311534458_RbgData_Added.cs" />
+    <Compile Include="Migrations\201710311534458_RbgData_Added.Designer.cs">
+      <DependentUpon>201710311534458_RbgData_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711150839415_CreatedTelemetriesTable.cs" />
+    <Compile Include="Migrations\201711150839415_CreatedTelemetriesTable.Designer.cs">
+      <DependentUpon>201711150839415_CreatedTelemetriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711150914529_AddedUserMachineNameToTelemetriesTable.cs" />
+    <Compile Include="Migrations\201711150914529_AddedUserMachineNameToTelemetriesTable.Designer.cs">
+      <DependentUpon>201711150914529_AddedUserMachineNameToTelemetriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801050812124_AddedCcmColumns.cs" />
+    <Compile Include="Migrations\201801050812124_AddedCcmColumns.Designer.cs">
+      <DependentUpon>201801050812124_AddedCcmColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801050909427_AddedCCMColumnsToPredictionRequest.cs" />
+    <Compile Include="Migrations\201801050909427_AddedCCMColumnsToPredictionRequest.Designer.cs">
+      <DependentUpon>201801050909427_AddedCCMColumnsToPredictionRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803190917412_AddedDistinctCommiterAndParticipantTables.cs" />
+    <Compile Include="Migrations\201803190917412_AddedDistinctCommiterAndParticipantTables.Designer.cs">
+      <DependentUpon>201803190917412_AddedDistinctCommiterAndParticipantTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803190920327_AddedBlockToParticipantTable.cs" />
+    <Compile Include="Migrations\201803190920327_AddedBlockToParticipantTable.Designer.cs">
+      <DependentUpon>201803190920327_AddedBlockToParticipantTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803190947406_RenamedFewColumnsInDistinctCommiterTable.cs" />
+    <Compile Include="Migrations\201803190947406_RenamedFewColumnsInDistinctCommiterTable.Designer.cs">
+      <DependentUpon>201803190947406_RenamedFewColumnsInDistinctCommiterTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803260545207_AddedCreatedAtUtcColumnToPredictionRequestTable.cs" />
+    <Compile Include="Migrations\201803260545207_AddedCreatedAtUtcColumnToPredictionRequestTable.Designer.cs">
+      <DependentUpon>201803260545207_AddedCreatedAtUtcColumnToPredictionRequestTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803260650459_RefactoredRbgLogic.cs" />
+    <Compile Include="Migrations\201803260650459_RefactoredRbgLogic.Designer.cs">
+      <DependentUpon>201803260650459_RefactoredRbgLogic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809202157286_AddFilePredictionTable.cs" />
+    <Compile Include="Migrations\201809202157286_AddFilePredictionTable.Designer.cs">
+      <DependentUpon>201809202157286_AddFilePredictionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809211821226_AddIdFieldForFilePrediction.cs" />
+    <Compile Include="Migrations\201809211821226_AddIdFieldForFilePrediction.Designer.cs">
+      <DependentUpon>201809211821226_AddIdFieldForFilePrediction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810111530365_ChangedFilePredictionFlagType.cs" />
+    <Compile Include="Migrations\201810111530365_ChangedFilePredictionFlagType.Designer.cs">
+      <DependentUpon>201810111530365_ChangedFilePredictionFlagType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DataExport\FilePrediction.cs" />
+    <Compile Include="Services\DataExport\Participant.cs" />
+    <Compile Include="Services\DataExport\RbgData.cs" />
+    <Compile Include="DependenciesConfigurator.cs" />
+    <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Migrations\201611031032531_Initial.cs" />
+    <Compile Include="Migrations\201611031032531_Initial.Designer.cs">
+      <DependentUpon>201611031032531_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611031055018_AddedTotalNumberOfRevisionsField.cs" />
+    <Compile Include="Migrations\201611031055018_AddedTotalNumberOfRevisionsField.Designer.cs">
+      <DependentUpon>201611031055018_AddedTotalNumberOfRevisionsField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611281057031_AddedColumn_BuildDateTimeLocal.cs" />
+    <Compile Include="Migrations\201611281057031_AddedColumn_BuildDateTimeLocal.Designer.cs">
+      <DependentUpon>201611281057031_AddedColumn_BuildDateTimeLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611281412507_Added_BuildCommitDateTimeLocal.cs" />
+    <Compile Include="Migrations\201611281412507_Added_BuildCommitDateTimeLocal.Designer.cs">
+      <DependentUpon>201611281412507_Added_BuildCommitDateTimeLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612021343193_AddedBuildProjectNameAndAuthor.cs" />
+    <Compile Include="Migrations\201612021343193_AddedBuildProjectNameAndAuthor.Designer.cs">
+      <DependentUpon>201612021343193_AddedBuildProjectNameAndAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701130740362_AddedPredictionModel.cs" />
+    <Compile Include="Migrations\201701130740362_AddedPredictionModel.Designer.cs">
+      <DependentUpon>201701130740362_AddedPredictionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701130908144_AddedPredictionModel2.cs" />
+    <Compile Include="Migrations\201701130908144_AddedPredictionModel2.Designer.cs">
+      <DependentUpon>201701130908144_AddedPredictionModel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701130940332_AddedPredictionModel3.cs" />
+    <Compile Include="Migrations\201701130940332_AddedPredictionModel3.Designer.cs">
+      <DependentUpon>201701130940332_AddedPredictionModel3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191126238_AddedPreviousBuildResultColumnToExportStat.cs" />
+    <Compile Include="Migrations\201701191126238_AddedPreviousBuildResultColumnToExportStat.Designer.cs">
+      <DependentUpon>201701191126238_AddedPreviousBuildResultColumnToExportStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191155124_AddedPreviousBuildResultColumnToRequestCache.cs" />
+    <Compile Include="Migrations\201701191155124_AddedPreviousBuildResultColumnToRequestCache.Designer.cs">
+      <DependentUpon>201701191155124_AddedPreviousBuildResultColumnToRequestCache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201300231_ModelDataTypeChangedToString.cs" />
+    <Compile Include="Migrations\201701201300231_ModelDataTypeChangedToString.Designer.cs">
+      <DependentUpon>201701201300231_ModelDataTypeChangedToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701231358525_CreateBinaryModels.cs" />
+    <Compile Include="Migrations\201701231358525_CreateBinaryModels.Designer.cs">
+      <DependentUpon>201701231358525_CreateBinaryModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701231440047_RemoveModelColumn.cs" />
+    <Compile Include="Migrations\201701231440047_RemoveModelColumn.Designer.cs">
+      <DependentUpon>201701231440047_RemoveModelColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701240750154_Refactoring.cs" />
+    <Compile Include="Migrations\201701240750154_Refactoring.Designer.cs">
+      <DependentUpon>201701240750154_Refactoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701240833266_Refactoring2.cs" />
+    <Compile Include="Migrations\201701240833266_Refactoring2.Designer.cs">
+      <DependentUpon>201701240833266_Refactoring2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701240922338_Refactoring3.cs" />
+    <Compile Include="Migrations\201701240922338_Refactoring3.Designer.cs">
+      <DependentUpon>201701240922338_Refactoring3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701310949531_ReduceColumnLengths.cs" />
+    <Compile Include="Migrations\201701310949531_ReduceColumnLengths.Designer.cs">
+      <DependentUpon>201701310949531_ReduceColumnLengths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311058591_AddIndex.cs" />
+    <Compile Include="Migrations\201701311058591_AddIndex.Designer.cs">
+      <DependentUpon>201701311058591_AddIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702020827166_AddIndexesOnMetrics.cs" />
+    <Compile Include="Migrations\201702020827166_AddIndexesOnMetrics.Designer.cs">
+      <DependentUpon>201702020827166_AddIndexesOnMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702020906144_AddColumnsToMetrics_Method_Features.cs" />
+    <Compile Include="Migrations\201702020906144_AddColumnsToMetrics_Method_Features.Designer.cs">
+      <DependentUpon>201702020906144_AddColumnsToMetrics_Method_Features.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AppConfiguration.cs" />
+    <Compile Include="Services\CommandLineParametersParser.cs" />
+    <Compile Include="Services\DataExport\BinaryModel.cs" />
+    <Compile Include="Services\DataExport\DatabaseContext.cs" />
+    <Compile Include="Services\DataExport\DatabaseContextFactory.cs" />
+    <Compile Include="Services\DataExport\Metric.cs" />
+    <Compile Include="Services\DataExport\IDataExportService.cs" />
+    <Compile Include="Services\DataExport\PredictionModel.cs" />
+    <Compile Include="Services\DataExport\PredictionRequest.cs" />
+    <Compile Include="Services\DataExport\SqlServerDataExportService.cs" />
+    <Compile Include="Services\DataExportJob.cs" />
+    <Compile Include="Services\BitbucketBuildInfoService.cs" />
+    <Compile Include="Services\DataExport\Telemetry.cs" />
+    <Compile Include="Services\GitChangesTrackerService.cs" />
+    <Compile Include="Services\GitBuildStatisticsService.cs" />
+    <Compile Include="Services\IAppConfiguration.cs" />
+    <Compile Include="Services\PredictionServiceResult.cs" />
+    <Compile Include="Services\TravisTorrentBuildInfoService.cs" />
+    <Compile Include="Services\IErrorHandler.cs" />
+    <Compile Include="Services\LoggingOnlyErrorHandler.cs" />
+    <Compile Include="Services\PredictionService.cs" />
+    <Compile Include="Services\PredictionsWebClient\AppConfigurationWebClientSettings.cs" />
+    <Compile Include="Services\PredictionsWebClient\IWebClientSettings.cs" />
+    <Compile Include="Services\PredictionsWebClient\TestResult.cs" />
+    <Compile Include="Services\PredictionsWebClient\WebClient.cs" />
+    <Compile Include="Services\PredictionsWebClient\WindowsRegistryWebClientSettings.cs" />
+    <Compile Include="Services\ValidationHelper.cs" />
+    <Compile Include="Services\WindowsRegistryProvider.cs" />
+    <Compile Include="WebServiceException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611031032531_Initial.resx">
+      <DependentUpon>201611031032531_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611031055018_AddedTotalNumberOfRevisionsField.resx">
+      <DependentUpon>201611031055018_AddedTotalNumberOfRevisionsField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611281057031_AddedColumn_BuildDateTimeLocal.resx">
+      <DependentUpon>201611281057031_AddedColumn_BuildDateTimeLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611281412507_Added_BuildCommitDateTimeLocal.resx">
+      <DependentUpon>201611281412507_Added_BuildCommitDateTimeLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612021343193_AddedBuildProjectNameAndAuthor.resx">
+      <DependentUpon>201612021343193_AddedBuildProjectNameAndAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701130740362_AddedPredictionModel.resx">
+      <DependentUpon>201701130740362_AddedPredictionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701130908144_AddedPredictionModel2.resx">
+      <DependentUpon>201701130908144_AddedPredictionModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701130940332_AddedPredictionModel3.resx">
+      <DependentUpon>201701130940332_AddedPredictionModel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191126238_AddedPreviousBuildResultColumnToExportStat.resx">
+      <DependentUpon>201701191126238_AddedPreviousBuildResultColumnToExportStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191155124_AddedPreviousBuildResultColumnToRequestCache.resx">
+      <DependentUpon>201701191155124_AddedPreviousBuildResultColumnToRequestCache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201300231_ModelDataTypeChangedToString.resx">
+      <DependentUpon>201701201300231_ModelDataTypeChangedToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701231358525_CreateBinaryModels.resx">
+      <DependentUpon>201701231358525_CreateBinaryModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701231440047_RemoveModelColumn.resx">
+      <DependentUpon>201701231440047_RemoveModelColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701240750154_Refactoring.resx">
+      <DependentUpon>201701240750154_Refactoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701240833266_Refactoring2.resx">
+      <DependentUpon>201701240833266_Refactoring2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701240922338_Refactoring3.resx">
+      <DependentUpon>201701240922338_Refactoring3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701310949531_ReduceColumnLengths.resx">
+      <DependentUpon>201701310949531_ReduceColumnLengths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311058591_AddIndex.resx">
+      <DependentUpon>201701311058591_AddIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702020827166_AddIndexesOnMetrics.resx">
+      <DependentUpon>201702020827166_AddIndexesOnMetrics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702020906144_AddColumnsToMetrics_Method_Features.resx">
+      <DependentUpon>201702020906144_AddColumnsToMetrics_Method_Features.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710311534458_RbgData_Added.resx">
+      <DependentUpon>201710311534458_RbgData_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711150839415_CreatedTelemetriesTable.resx">
+      <DependentUpon>201711150839415_CreatedTelemetriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711150914529_AddedUserMachineNameToTelemetriesTable.resx">
+      <DependentUpon>201711150914529_AddedUserMachineNameToTelemetriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801050812124_AddedCcmColumns.resx">
+      <DependentUpon>201801050812124_AddedCcmColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801050909427_AddedCCMColumnsToPredictionRequest.resx">
+      <DependentUpon>201801050909427_AddedCCMColumnsToPredictionRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803190917412_AddedDistinctCommiterAndParticipantTables.resx">
+      <DependentUpon>201803190917412_AddedDistinctCommiterAndParticipantTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803190920327_AddedBlockToParticipantTable.resx">
+      <DependentUpon>201803190920327_AddedBlockToParticipantTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803190947406_RenamedFewColumnsInDistinctCommiterTable.resx">
+      <DependentUpon>201803190947406_RenamedFewColumnsInDistinctCommiterTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803260545207_AddedCreatedAtUtcColumnToPredictionRequestTable.resx">
+      <DependentUpon>201803260545207_AddedCreatedAtUtcColumnToPredictionRequestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803260650459_RefactoredRbgLogic.resx">
+      <DependentUpon>201803260650459_RefactoredRbgLogic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809202157286_AddFilePredictionTable.resx">
+      <DependentUpon>201809202157286_AddFilePredictionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809211821226_AddIdFieldForFilePrediction.resx">
+      <DependentUpon>201809211821226_AddIdFieldForFilePrediction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810111530365_ChangedFilePredictionFlagType.resx">
+      <DependentUpon>201810111530365_ChangedFilePredictionFlagType.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Codefusion.Jaskier.API\Codefusion.Jaskier.API.csproj">
+      <Project>{5aa6eaa0-ab11-415f-8108-8a02e871fabd}</Project>
+      <Name>Codefusion.Jaskier.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\lib\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

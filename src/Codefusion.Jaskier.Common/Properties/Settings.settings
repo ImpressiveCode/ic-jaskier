@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Codefusion.Jaskier.Common.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AzureApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">apiKey</Value>
+    </Setting>
+    <Setting Name="AzureService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://europewest.services.azureml.net/subscriptions/service/execute?api-version=2.0&amp;format=swagger</Value>
+    </Setting>
+    <Setting Name="AzureWebService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://service.azurewebsites.net/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

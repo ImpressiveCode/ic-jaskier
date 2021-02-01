@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="Jaskier.Client.VS2015.CODEFUSION.6b68a4ea-1a2b-4a64-aecc-bc67a427b080" Version="1.2.0" Language="en-US" Publisher="CODEFUSION Sp. z o.o." />
+        <DisplayName>Jaskier - defect prediction</DisplayName>
+        <Description xml:space="preserve">Defect prediction extension for Visual Studio. Based on machine learning models created with continuous integration build results as feature it will try to predict if the changes you are currently making in your project will likely result in build failure or not.</Description>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,17.0]" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,17.0]" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+</PackageManifest>

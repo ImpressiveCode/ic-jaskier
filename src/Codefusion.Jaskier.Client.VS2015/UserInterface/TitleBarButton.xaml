@@ -1,0 +1,31 @@
+﻿<Button x:Class="Codefusion.Jaskier.Client.VS2015.UserInterface.TitleBarButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:userInterface="clr-namespace:Codefusion.Jaskier.Client.VS2015.UserInterface"
+             xmlns:local="clr-namespace:Codefusion.Jaskier.Client.VS2015"
+             Command="{Binding ShowPredictionsWindowCommand}"
+             Content="{Binding StatusWrapper.Image, Mode=OneWay}"
+             ToolTip="{Binding StatusWrapper.Text, Mode=OneWay}"
+             mc:Ignorable="d" 
+             d:DesignHeight="26" d:DesignWidth="34">
+    <Button.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+                <ResourceDictionary>
+                    <userInterface:BindingProxy x:Key="MyProxy" Data="{Binding }"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Button.Resources>
+    <Button.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="{x:Static local:Strings.PredictSavedFiles}" IsCheckable="True" IsChecked="{Binding Data.PredictSavedFiles, Source={StaticResource MyProxy}, Mode=TwoWay}"/>
+            <MenuItem Header="{x:Static local:Strings.ShowPredictionsPane}" Command="{Binding Data.ShowPredictionsPaneCommand, Source={StaticResource MyProxy}}"/>
+            <Separator/>
+            <MenuItem Header="{x:Static local:Strings.Settings}" Command="{Binding Data.ShowSettingsWindowCommand, Source={StaticResource MyProxy}}"/>
+        </ContextMenu>
+    </Button.ContextMenu>
+</Button>
